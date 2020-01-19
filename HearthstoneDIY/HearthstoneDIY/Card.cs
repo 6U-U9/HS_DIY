@@ -12,14 +12,14 @@ namespace HearthstoneDIY
         //private string inGameID;
         private bool is_collectable;
         private string cardclass;
-        private string name;
+        public string name;
         private string rarity;
         private int bringLimit;
 
         public int hp;
         public int attack;
         public int cost;
-
+        //？
         //in game parameters
         public int attackChances;
         public bool is_dead;

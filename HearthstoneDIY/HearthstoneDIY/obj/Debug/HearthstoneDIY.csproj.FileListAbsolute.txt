@@ -7,3 +7,9 @@ D:\Code\C#\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.Properties.Res
 D:\Code\C#\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.csproj.GenerateResource.cache
 D:\Code\C#\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.exe
 D:\Code\C#\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.pdb
+D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.csprojAssemblyReference.cache
+D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.FormStart.resources
+D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.Properties.Resources.resources
+D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.csproj.GenerateResource.cache
+D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.exe
+D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.pdb
