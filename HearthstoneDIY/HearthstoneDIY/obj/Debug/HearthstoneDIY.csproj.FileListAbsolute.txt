@@ -13,3 +13,7 @@ D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.Propert
 D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.csproj.GenerateResource.cache
 D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.exe
 D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.pdb
+D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\obj\Debug\HearthstoneDIY.FormDeckChoose.resources
+D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\bin\Debug\HearthstoneDIY.exe.config
+D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\bin\Debug\HearthstoneDIY.exe
+D:\code\C#\HS_DIY\HearthstoneDIY\HearthstoneDIY\bin\Debug\HearthstoneDIY.pdb

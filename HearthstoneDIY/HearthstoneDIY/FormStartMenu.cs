@@ -17,6 +17,14 @@ namespace HearthstoneDIY
         {
             InitializeComponent();
             //Log in
+
+            //test account
+            Deck deck1 = new Deck(new HeroCard());
+            deck1.name = "deck1";
+            Deck deck2 = new Deck(new HeroCard());
+            deck2.name = "deck2";
+            account.decklist.Add(deck1);
+            account.decklist.Add(deck2);
         }
 
         private void buttonStartGame_Click(object sender, EventArgs e)
@@ -27,7 +35,7 @@ namespace HearthstoneDIY
             //Application.ExitThread();
             this.Show();
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             NewCard1 newCard1 = new NewCard1();
@@ -35,5 +43,6 @@ namespace HearthstoneDIY
             Console.WriteLine(newCard1.Equals(newCard2));
             Console.WriteLine(newCard1.GetType());
         }
+        
     }
 }

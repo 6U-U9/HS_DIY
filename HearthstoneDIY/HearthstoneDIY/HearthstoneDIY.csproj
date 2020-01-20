@@ -76,6 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpellCard.cs" />
     <Compile Include="WeaponCard.cs" />
+    <EmbeddedResource Include="FormDeckChoose.resx">
+      <DependentUpon>FormDeckChoose.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormStartMenu.resx">
       <DependentUpon>FormStartMenu.cs</DependentUpon>
     </EmbeddedResource>

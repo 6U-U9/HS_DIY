@@ -8,7 +8,7 @@ namespace HearthstoneDIY
 {
     public class Account
     {
-        List<Deck> decklist;
-        Dictionary<string, int> collections;
+        public List<Deck> decklist=new List<Deck>();
+        public Dictionary<string, int> collections;
     }
 }

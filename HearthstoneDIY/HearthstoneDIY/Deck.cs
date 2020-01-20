@@ -9,6 +9,7 @@ namespace HearthstoneDIY
     public class Deck
     {
         public int cardnum;
+        public string name;
         public HeroCard hero;
         private List<Card> cardlist = new List<Card>();
         public Deck(HeroCard hero,int cardnum=30)

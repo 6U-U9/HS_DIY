@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace HearthstoneDIY
 {
-    public abstract class Card : IEquatable<Card>
+    public class Card : IEquatable<Card>
     {
-        private string id;
+        public string id;
         //private string inGameID;
-        private bool is_collectable;
-        private string cardclass;
+        public bool is_collectable;
+        public string cardclass;
         public string name;
-        private string rarity;
-        private int bringLimit;
+        public string rarity;
+        public int bringLimit;
 
         public int hp;
         public int attack;
         public int cost;
-        //？
+        
         //in game parameters
         public int attackChances;
         public bool is_dead;
@@ -122,6 +122,11 @@ namespace HearthstoneDIY
         public bool Equals(Card other)
         {
             return other.GetType()==this.GetType();
+        }
+        public virtual Card GetCopy()
+        {
+            Card card = new Card();
+            return card;
         }
         public virtual void AddToDeck(Deck deck)
         { }
