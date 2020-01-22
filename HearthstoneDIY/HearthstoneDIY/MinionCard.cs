@@ -11,6 +11,8 @@ namespace HearthstoneDIY
         public override void PlayedFromHand()
         {
             //need position
+            if (!player.hand.Contains(this))
+                return;
             player.board.Insert(0,this);
             player.hand.Remove(this);
             base.PlayedFromHand();

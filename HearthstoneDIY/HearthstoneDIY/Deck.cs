@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,19 +9,19 @@ namespace HearthstoneDIY
 {
     public class Deck
     {
-        public int cardnum;
+        public int cardlimit;
         public string name;
         public HeroCard hero;
         private List<Card> cardlist = new List<Card>();
-        public Deck(HeroCard hero,int cardnum=30)
+        public Deck(HeroCard hero,int cardlimit=30)
         {
-            this.cardnum = cardnum;
+            this.cardlimit = cardlimit;
             this.hero = hero;
         }
         public void AddCard(Card newcard)
         {
             //Check Total Card Amount in Deck
-            if (cardnum >= cardlist.Count)
+            if (cardlimit <= cardlist.Count)
             { Console.WriteLine("Deck Full"); return; }
 
             //Check This Card Amount in Deck
@@ -38,9 +39,9 @@ namespace HearthstoneDIY
             //Add Card
             cardlist.Add(newcard);
             newcard.AddToDeck(this);
-
+            Console.WriteLine("Added to Deck");
             //Sort
-            cardlist.Sort();
+            //cardlist.Sort(new DeckSortComparer());
         }
         public void DelCard(Card delcard)
         {
@@ -58,7 +59,14 @@ namespace HearthstoneDIY
         }
         public List<Card> GetDeck()
         {
-            return cardlist;
+            var ingame_cardlist = new List<Card>();
+            foreach (Card card in cardlist)
+            {
+                Type cardType = card.GetType();
+                MethodInfo methodInfo = cardType.GetMethod("GetCopy");
+                //Card newcard = (Card)methodInfo.MakeGenericMethod(new Type[] { card.GetType() }).Invoke(card, null);
+                ingame_cardlist.Add((Card)methodInfo.MakeGenericMethod(new Type[] { card.GetType()}).Invoke(card,null)); }
+            return ingame_cardlist;
         }
     }
 }

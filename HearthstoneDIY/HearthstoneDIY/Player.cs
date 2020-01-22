@@ -9,14 +9,14 @@ namespace HearthstoneDIY
     //己方半场的控制
     public class Player:Card
     {
-        public List<Card> startDeck;
-        public List<Card> deck;
-        public List<Card> hand;
-        public List<Card> board;
-        public List<Card> heroPowers;
-        public List<Card> weapons;
+        public List<Card> startDeck=new List<Card>();
+        public List<Card> deck = new List<Card>();
+        public List<Card> hand = new List<Card>();
+        public List<Card> board = new List<Card>();
+        public List<Card> heroPowers = new List<Card>();
+        public List<Card> weapons = new List<Card>();
         public int crystal;
-        public int crystalPower;
+        public int crystalPower;//max
         public int crystalOverloaded;
         public int crystalLimit;
         public int crystalGrowSpeed;
@@ -43,7 +43,7 @@ namespace HearthstoneDIY
         }
         public void PlayCard(Card card)
         {
-            if (card.IsAbleToPlay())
+            if (card.IsAbleToPlay()&&hand.Contains(card))
             { SpendResource(ref card.GetResourceNeed(), card.cost); card.PlayedFromHand(); }
         }
         public void Draw()
@@ -60,18 +60,20 @@ namespace HearthstoneDIY
         }
         public override void NewTurnStarted()
         {
+            Draw();
             CrystalNaturalGrow();
+            RefreshCrystal();
             base.NewTurnStarted();
         }
         public virtual void CrystalNaturalGrow()
         {
-            crystal+= crystalGrowSpeed;
-            if (crystal >= crystalLimit)
-                crystal = crystalLimit;
+            crystalPower += crystalGrowSpeed;
+            if (crystalPower >= crystalLimit)
+                crystalPower = crystalLimit;
         }
         public virtual void RefreshCrystal()
         {
-            crystalPower = crystal-crystalOverloaded;
+            crystal = crystalPower-crystalOverloaded;
         }
 
     }

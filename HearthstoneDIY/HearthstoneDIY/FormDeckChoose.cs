@@ -33,8 +33,8 @@ namespace HearthstoneDIY
                 Controls.Add(decks[i]);
             }
             playerDeck_choose.Add(-1);
-            playerDeck_choose.Add(-1);
-            playerDeck_choose.Add(-1);
+            playerDeck_choose.Add(0);
+            playerDeck_choose.Add(1);
             InitializeComponent();
         }
         private void DeckButton_Click(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace HearthstoneDIY
                 label1.Text = "P1 deck: " + deckNames[playerDeck_choose[1]];
             if (playerDeck_choose[2] != -1)
                 label2.Text = "P2 deck: " + deckNames[playerDeck_choose[2]];
-            Console.WriteLine("Update");
+            //Console.WriteLine("Update");
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -58,6 +58,20 @@ namespace HearthstoneDIY
         private void button1_Click(object sender, EventArgs e)
         {
             playerchosen = 1;
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            if (playerDeck_choose[1] == -1|| playerDeck_choose[2] == -1)
+                return;
+                var player1 = account.decklist[playerDeck_choose[1]];
+            var player2 = account.decklist[playerDeck_choose[2]];
+            var battleGround = new BattleGround(player1, player2);
+            var newform = new GameBoard(battleGround);
+            this.Hide();
+            newform.ShowDialog();
+            //Application.ExitThread();
+            this.Show();
         }
     }
 }

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace HearthstoneDIY
 {
-    public class Card : IEquatable<Card>
+    public class Card //: IEquatable<Card>
     {
         public string id;
         //private string inGameID;
         public bool is_collectable;
         public string cardclass;
-        public string name;
+        public string name="";
         public string rarity;
-        public int bringLimit;
+        public int bringLimit=5;
 
         public int hp;
         public int attack;
@@ -24,7 +24,18 @@ namespace HearthstoneDIY
         public int attackChances;
         public bool is_dead;
         public Player player;
-
+        public virtual T GetCopy<T>()where T:Card, new()
+        {
+            T card = new T();
+            card.is_collectable = this.is_collectable;
+            card.cardclass = this.cardclass;
+            card.rarity = this.rarity;
+            card.bringLimit = this.bringLimit;
+            card.hp = this.hp;
+            card.attack = this.attack;
+            card.cost = this.cost;
+            return card;
+        }
         public int Get_bringLimit()
         { return bringLimit; }
 
@@ -119,15 +130,11 @@ namespace HearthstoneDIY
             else
                 is_dead = false;
         }
-        public bool Equals(Card other)
+        /*public bool Equals(Card other)
         {
             return other.GetType()==this.GetType();
-        }
-        public virtual Card GetCopy()
-        {
-            Card card = new Card();
-            return card;
-        }
+        }*/
+        
         public virtual void AddToDeck(Deck deck)
         { }
         public virtual void RemoveFromDeck(Deck deck)
@@ -145,8 +152,12 @@ namespace HearthstoneDIY
             return x.cost.CompareTo(y.cost);
         }
     }
-    public class NewCard1 : Card
+    public class NewCard1 : MinionCard
     { }
-    public class NewCard2 : Card
+    public class NewCard2 : MinionCard
+    { }
+    public class NewCard3 : MinionCard
+    { }
+    public class NewCard4 : MinionCard
     { }
 }
