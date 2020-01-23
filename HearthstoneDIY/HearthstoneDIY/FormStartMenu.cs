@@ -67,8 +67,8 @@ namespace HearthstoneDIY
         {
             Card newCard1 = (Card)new NewCard1();
             Card newCard2 = new NewCard2();
-            Console.WriteLine(newCard1.Equals(newCard2));
-            Console.WriteLine(newCard1.GetType());
+            //Console.WriteLine(newCard1.Equals(newCard2));
+            //Console.WriteLine(newCard1.GetType());
         }
 
         private void button1_MouseDown(object sender, MouseEventArgs e)
@@ -78,6 +78,13 @@ namespace HearthstoneDIY
 
         private void button1_MouseUp(object sender, MouseEventArgs e)
         {
+            int x= ((Button)sender).Location.X + e.Location.X;
+            int y = ((Button)sender).Location.Y + e.Location.Y;
+            Point p = new Point(x,y); 
+            Console.WriteLine("x:" + p.X + "  y:" + p.Y);
+            var c=this.GetChildAtPoint(p);
+            if(c!=null)
+            Console.WriteLine(c.ToString());
             //Console.WriteLine("mouseUp");
         }
     }

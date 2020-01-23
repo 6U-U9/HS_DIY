@@ -52,7 +52,9 @@ namespace HearthstoneDIY
         }
         private void CardButton_MouseUp(object sender, MouseEventArgs e)
         {
-            Point mousePoint=e.Location;
+            int x = ((Button)sender).Location.X + e.Location.X;
+            int y = ((Button)sender).Location.Y + e.Location.Y;
+            Point mousePoint=new Point(x,y);
             Button button=(Button)GetChildAtPoint(mousePoint);
             Card actor = (Card)(((Button)sender).Tag);
             if (button == null)

@@ -21,7 +21,7 @@ namespace HearthstoneDIY
         public int cost;
         
         //in game parameters
-        public int attackChances;
+        public int attackChances=2;
         public bool is_dead;
         public Player player;
         public virtual T GetCopy<T>()where T:Card, new()
@@ -78,13 +78,13 @@ namespace HearthstoneDIY
         }
         public virtual int GetDamageValue(Card other)
         {
-            int damageValue = GetAttackValue(other);
+            int damageValue = other.GetAttackValue();
             if (damageValue > 0)
                 return -(damageValue);
             else
                 return 0;
         }
-        public virtual int GetAttackValue(Card other)
+        public virtual int GetAttackValue()
         {
                 return this.attack;
         }
